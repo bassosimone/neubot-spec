@@ -26,16 +26,16 @@ The runner is invoked by the local web server.
 
 The algorithm proper:
 
-1. validate input parameters or exit 1
-2. if AP address auto-discover:
-    2.1. query mlabns
-    2.2. otherwise select test at random from static list
-    2.3. otherwise exit 2
-3. test negotiation (to be expanded)
-4. execute real test redirecting stdin, stdout, stderr
-5. if runtime > max_runtime, kill test, exit 3
-6. test collect (to be expanded)
-7. exit 0
+- 1. validate input parameters or exit 1
+- 2. if AP address auto-discover:
+    - 2.1. query mlabns
+    - 2.2. otherwise select test at random from static list
+    - 2.3. otherwise exit 2
+- 3. test negotiation (to be expanded)
+- 4. execute real test redirecting stdin, stdout, stderr
+- 5. if runtime > max_runtime, kill test, exit 3
+- 6. test collect (to be expanded)
+- 7. exit 0
 
 ## Unclear / XXX / TODO things
 
