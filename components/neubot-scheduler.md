@@ -15,7 +15,7 @@ we describe the high-level algorithm implementing them.
 
 ### /
 
-Originally Neubot included the sources a modern AJAX based web interface
+Originally Neubot included the sources of a modern AJAX based web interface
 but this is not the case anymore.
 
 Now the full fledged web interface is accessible online and when one
