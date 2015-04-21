@@ -10,6 +10,9 @@ of Neubot that implements Neubot API and runs periodic tests.
 
 ## API
 
+Here we describe the APIs implemented by the neubot-scheduler and
+we describe the high-level algorithm implementing them.
+
 ### /
 
 Originally Neubot included the sources a modern AJAX based web interface
@@ -21,7 +24,7 @@ state and point the user to the online web interface for more info.
 
 Example:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
