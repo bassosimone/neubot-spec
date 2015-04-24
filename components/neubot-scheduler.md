@@ -12,7 +12,7 @@ of Neubot that implements Neubot API and runs periodic tests.
 
 We assume that the neubot-runner runs in the `/` folder and that it
 does not run with root privileges. The latter is checked when the
-process is started on a Unix system using `getresuid()`.
+process is started on a Unix system.
 
 We assume that, when the neubot-runner is run at startup it is run
 by another process which drops the privileges.
