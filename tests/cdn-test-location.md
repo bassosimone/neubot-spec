@@ -39,12 +39,12 @@ The following is the algorithm:
 1. Find out the user's ISP default DNS
 2. Add this DNS to the list of DNS servers
 3. For each DNS server:
-  3.1. For each domain name:
-    3.1.1. ipv4_addr = Lookup(A, domain name)
-    3.1.2. ipv6_addr = Lookup(AAAA, domain name)
-    3.1.3. ReverseLookup(A, ipv4_addr)
-    3.1.4. ReverseLookup(AAAA, ipv6_addr)
-    3.1.5. Traceroute(ipv4_addr)
-    3.1.6. Traceroute6(ipv6_addr)
-    3.1.6. Whois(ipv4_addr)
-    3.1.7. Whois(ipv6_addr)
+    1. For each domain name:
+        1. ipv4_addr = Lookup(A, domain name)
+        2. ipv6_addr = Lookup(AAAA, domain name)
+        3. ReverseLookup(A, ipv4_addr)
+        4. ReverseLookup(AAAA, ipv6_addr)
+        5. Traceroute(ipv4_addr)
+        6. Traceroute6(ipv6_addr)
+        6. Whois(ipv4_addr)
+        7. Whois(ipv6_addr)
