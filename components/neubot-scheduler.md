@@ -115,7 +115,7 @@ This database contains a single table with the following schema:
 
 ```text
 +-------------------------+--------------+
-| NAME PRIMARY KEY STRING | VALUE STRING |
+| name PRIMARY KEY STRING | value STRING |
 +-------------------------+--------------+
 ```
 
@@ -127,9 +127,9 @@ as integer when they are read.
 This database contains a table having the following schema:
 
 ```text
-+-------------------------------+------------------+-------------+
-| TIMESTAMP INTEGER PRIMARY KEY | TEST_NAME STRING | JSON STRING |
-+-------------------------------+------------------+-------------+
++------------------------------------+------------------+-------------+
+| timestamp_msec INTEGER PRIMARY KEY | test_name STRING | json STRING |
++------------------------------------+------------------+-------------+
 ```
 
 where timestamp is the timestamp when the test started with millisecond
