@@ -10,7 +10,7 @@ hosts belonging to content delivery networks.
 
 A complementary problem is how to figure out which are the
 most frequently contacted host, but this is not addressed
-by this document.
+by this document, as this can be done when postprocessing data.
 
 ## High-level algorithm
 
