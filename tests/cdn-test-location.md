@@ -21,18 +21,29 @@ as the capabilities that the software must implement.
   - List of domain names to be tested
   - List of DNS servers
 - Output:
-  - For each domain name:
-    - The corresponding IPv4/IPv6 address
-    - The reverse lookup
-    - The route to reach such address
-    - The owner of this address
+  - For each DNS server:
+    - For each domain name:
+      - Lookup IPv4
+      - Lookup IPv6
+    - For each IPv4 address:
+      - Lookup reverse
+      - Traceroute
+      - Whois (?)
+    - For each IPv6 address:
+      - Lookup reverse
+      - Traceroute
+      - Whois (?)
 - Capabilities:
-  - Library MUST allow to set a specific DNS
-  - Find out the default DNS of the user's ISP (?)
-  - Run traceroute or execute system-wide traceroute
-  - Run whois client or execute system-wide whois client (?)
-  - Resolve A and AAAA
-  - Reverse lookup
+  - DNS
+    - Set specific DNS server
+    - Use default DNS server
+    - Find out system-wide DNS server
+    - Resolve A, AAAA
+    - Perform reverse lookups
+  - Traceroute
+    - Run traceroute or execute system-wide client
+  - Whois 
+    - Run whois or execute system-wide client
 
 The following is the algorithm:
 
