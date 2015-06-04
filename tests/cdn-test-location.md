@@ -90,3 +90,56 @@ The algorithm is straightforward considering the structure of the output present
   }
 }
 ```
+
+Alternative (probably better?) approach:
+
+```json
+{
+  "input": [
+    "www.google.com",
+    "www.kernel.org",
+    "www.123456.org"
+  ],
+  "dns_servers": [
+    "8.8.8.8",
+    "8.8.4.4",
+    "208.67.222.222",
+    "208.67.222.220",
+    "default"
+  ],
+  "output": {
+    "default_nameserver": "130.192.3.21",
+    "8.8.8.8": {
+      "A": {
+        "www.google.com": [
+          "74.125.232.145",
+          "74.125.232.146"
+        ],
+        "www.kernel.org": []
+      },
+      "AAAA": {
+        "www.google.com": [
+          "2a00:1450:4002:803::1010"
+        ],
+        "www.kernel.org": []
+      },
+      "ReverseA": {
+        "74.125.232.145": [
+          "mil02s05-in-f17.1e100.net"
+        ]
+      },
+      "ReverseAAAA": {
+        "2a00:1450:4002:803::1010": [
+          "mil02s05-in-f17.1e100.net"
+        ]
+      },
+    }
+    "traceroute": {
+      "74.125.232.145": "traceroute to 74.125.232.145 (74.125.232.145)..."
+    },
+    "whois": {
+      "74.125.232.145": "#\n# ARIN WHOIS\n..."
+    },
+  }
+}
+```
