@@ -70,22 +70,16 @@ The algorithm is straightforward considering the structure of the output present
       "www.google.com": {
         "ipv4": {
           "74.125.232.145": {
-            "reverse": ...,
-            "traceroute": ...,
-            "whois": ...,
+            "reverse": [
+              "mil02s05-in-f17.1e100.net"
+            ],
+            "traceroute": "traceroute to 74.125.232.145 (74.125.232.145)...",
+            "whois": "#\n# ARIN WHOIS\n...",
           },
-          "74.125.232.146": {
-            "reverse": ...,
-            "traceroute": ...,
-            "whois": ...,
-          },
+          "74.125.232.146": {}
         },
         "ipv6": {
-          "2a00:1450:4002:803::1010": {
-            "reverse": ...,
-            "traceroute": ...,
-            "whois": ...,
-          },
+          "2a00:1450:4002:803::1010": {}
         }
       }
     },
