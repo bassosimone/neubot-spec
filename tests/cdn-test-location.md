@@ -67,49 +67,6 @@ The algorithm is straightforward considering the structure of the output present
   "output": {
     "default_nameserver": "130.192.3.21",
     "8.8.8.8": {
-      "www.google.com": {
-        "ipv4": {
-          "74.125.232.145": {
-            "reverse": [
-              "mil02s05-in-f17.1e100.net"
-            ],
-            "traceroute": "traceroute to 74.125.232.145 (74.125.232.145)...",
-            "whois": "#\n# ARIN WHOIS\n...",
-          },
-          "74.125.232.146": {}
-        },
-        "ipv6": {
-          "2a00:1450:4002:803::1010": {}
-        }
-      }
-    },
-    "8.8.4.4": {},
-    "208.67.222.222": {},
-    "208.67.222.220": {},
-    "default": {}
-  }
-}
-```
-
-Alternative (probably better?) approach:
-
-```json
-{
-  "input": [
-    "www.google.com",
-    "www.kernel.org",
-    "www.123456.org"
-  ],
-  "dns_servers": [
-    "8.8.8.8",
-    "8.8.4.4",
-    "208.67.222.222",
-    "208.67.222.220",
-    "default"
-  ],
-  "output": {
-    "default_nameserver": "130.192.3.21",
-    "8.8.8.8": {
       "A": {
         "www.google.com": [
           "74.125.232.145",
