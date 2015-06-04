@@ -21,6 +21,7 @@ as the capabilities that the software must implement.
   - List of domain names to be tested
   - List of DNS servers
 - Output:
+  - Result of querying "whoami.akamai.net" (see below) 
   - For each DNS server:
     - For each domain name:
       - Lookup IPv4
@@ -45,17 +46,4 @@ as the capabilities that the software must implement.
   - Whois 
     - Run whois or execute system-wide client
 
-The following is the algorithm:
-
-1. Find out the user's ISP default DNS
-2. Add this DNS to the list of DNS servers
-3. For each DNS server:
-    1. For each domain name:
-        1. ipv4_addr = Lookup(A, domain name)
-        2. ipv6_addr = Lookup(AAAA, domain name)
-        3. ReverseLookup(A, ipv4_addr)
-        4. ReverseLookup(AAAA, ipv6_addr)
-        5. Traceroute(ipv4_addr)
-        6. Traceroute6(ipv6_addr)
-        6. Whois(ipv4_addr)
-        7. Whois(ipv6_addr)
+The algorithm is straightforward considering the structure of the output presented above. Let us just clarify that querying "whoami.akamai.net" using the default resolver returns the host that executed the query that possibly is not a resolver, but it hints at who is running that server (recipe [lifted from serverfault](http://superuser.com/questions/536238/is-it-possible-to-find-out-which-upstream-dns-server-my-router-is-querying-jus)).
