@@ -47,3 +47,52 @@ as the capabilities that the software must implement.
     - Run whois or execute system-wide client
 
 The algorithm is straightforward considering the structure of the output presented above. Let us just clarify that querying "whoami.akamai.net" using the default resolver returns the host that executed the query that possibly is not a resolver, but it hints at who is running that server (recipe [lifted from serverfault](http://superuser.com/questions/536238/is-it-possible-to-find-out-which-upstream-dns-server-my-router-is-querying-jus)).
+
+## Example output
+
+```json
+{
+  "input": [
+    "www.google.com",
+    "www.kernel.org",
+    "www.123456.org"
+  ],
+  "dns_servers": [
+    "8.8.8.8",
+    "8.8.4.4",
+    "208.67.222.222",
+    "208.67.222.220",
+    "default"
+  ],
+  "output": {
+    "default_nameserver": "130.192.3.21",
+    "8.8.8.8": {
+      "www.google.com": {
+        "ipv4": {
+          "74.125.232.145": {
+            "reverse": ...,
+            "traceroute": ...,
+            "whois": ...,
+          },
+          "74.125.232.146": {
+            "reverse": ...,
+            "traceroute": ...,
+            "whois": ...,
+          },
+        },
+        "ipv6": {
+          "2a00:1450:4002:803::1010": {
+            "reverse": ...,
+            "traceroute": ...,
+            "whois": ...,
+          },
+        }
+      }
+    },
+    "8.8.4.4": {},
+    "208.67.222.222": {},
+    "208.67.222.220": {},
+    "default": {}
+  }
+}
+```
