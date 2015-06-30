@@ -23,3 +23,38 @@ The key files to understand this process should be the following:
 It is also useful to see the structure of the [updater directory on Neubot's web server](http://releases.neubot.org/updates/win32/).
 
 It is also useful to read the [specification of how updates work on MacOS](https://github.com/neubot/neubot/blob/0.4.16.9/doc/neubot/updater/unix.txt).
+
+
+### `neubotw.exe`
+
+* Start: 
+ * If `-k` is addded check for a running instance and tries to kill it.
+ * Launch `background_win32.main(['neubot'])` that:
+  * Read the databse.
+  * Save log in the database.
+  * Check if privacy option are ok.
+  * Start the APIs.
+  * Start `updater_win32.py`.
+  * Start `poller.loop()`.
+* Status:
+ * Check if neubot is runnung and print the status.
+* Stop: 
+ * Tries to stop neubot.
+
+
+### `updater_win32`
+
+* check privacy permission
+* invoke `retrieve_files` of `update_runner` if an argument is passed.
+ * get the url from `updater_utils`
+ * run `deferred.add_callback(self._retrieve_tarball)`:
+  * 
+ * and `errnback(self._handle_failure)` in from `defer.py`
+ * 
+* launch `poller.loop()`
+* 
+### `updater_runner`
+
+
+
+
