@@ -45,10 +45,33 @@ It is also useful to read the [specification of how updates work on MacOS](https
 ### `updater_win32`
 
 * check privacy permission
-* invoke `retrieve_files` of `update_runner` if an argument is passed.
+* invoke `update_runner.retrieve_files` if an argument is passed.
  * get the url from `updater_utils`
  * run `deferred.add_callback(self._retrieve_tarball)`:
+  * check validity of ctx
+  * get tarball uri with `updater_utils.tarball_get_uri(self.system, ctx['vinfo'])`.
+  * run `deferred.add_callback(self._process_files)`:
+   * validation check. 
+   * Save tarball and signature on disk
+    * run `updater_utils.tarball_save()`
+    * run `updater_utils.signature_save()`
+   * Verify signature using OpenSSL
+    * `updater_verify.dgst_verify()`
+    * `updater_install.install()`
+   * run `updater_install.install()`:
+    * verify version number with a regexp.
+    * create filenames.
+    * verify the tarbal.
+    * eventual dryrun premature return.
+    * exctract the archive.
+    * compilation.
+    * `.neubot-installed-ok` file is written.
+    * sync..
+   * run `self.install()` that is empty.
+  * run `deferred.add_errback(self._handle_failure)`:
+   * log the failure
   * 
+  
  * and `errnback(self._handle_failure)` in from `defer.py`
  * 
 * launch `poller.loop()`
