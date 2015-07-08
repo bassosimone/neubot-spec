@@ -46,7 +46,7 @@ It is also useful to read the [specification of how updates work on MacOS](https
 
 * check privacy permission
 * invoke `update_runner.retrieve_files` if an argument is passed.
-  * get the url from `updater_utils`
+  * get the signature with `updater_utils.signature_get_uri()`
   * run `deferred.add_callback(self._retrieve_tarball)`:
     * check validity of ctx
     * get tarball uri with `updater_utils.tarball_get_uri(self.system, ctx['vinfo'])`.
@@ -57,7 +57,6 @@ It is also useful to read the [specification of how updates work on MacOS](https
         * run `updater_utils.signature_save()`
       * Verify signature using OpenSSL
         * `updater_verify.dgst_verify()`
-        * `updater_install.install()`
       * run `updater_install.install()`:
         * verify version number with a regexp.
         * create filenames.
@@ -72,10 +71,22 @@ It is also useful to read the [specification of how updates work on MacOS](https
       * log the failure
   * and `errnback(self._handle_failure)` in from `defer.py`
 * launch `poller.loop()`
-* 
+
 
 ### `updater_runner`
 
+* `updater_utils.tarball_save()`:
+  * Save the tarball in the specified path.
+* `updater_utils.signature_save()`:
+  * save the signature in the specifed path.
+* `updater_utils.tarball_get_uri()`
+  * create the download uri joining the system type and the version
+* `updater_utils.signature_get_uri()`:
+  *  create the download uri for the signature joining the system type and the version
 
+### `updater_verify`
+
+* `updater_verify.dgst_verify()`
+  * Call OpenSSL to verify the signature.  The public key is `VERSIONDIR/pubkey.pem`.  It assumes the signature algorithm is SHA256.
 
 
