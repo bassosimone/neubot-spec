@@ -90,3 +90,13 @@ It is also useful to read the [specification of how updates work on MacOS](https
   * Call OpenSSL to verify the signature.  The public key is `VERSIONDIR/pubkey.pem`.  It assumes the signature algorithm is SHA256.
 
 
+### Structure of http://releases.neubot.org/updates/win32/
+
+Each relese is made by a triple of file, the structure of the file name is a number dot a 9 digit number dot the extension.
+
+* The first number is the version number
+* The 9 digit number is made by three groups of three digits  indicating:
+  * 
+
+
+
