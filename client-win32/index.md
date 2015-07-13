@@ -42,7 +42,7 @@ It is also useful to read the [specification of how updates work on MacOS](https
    * Tries to stop neubot.
 
 
-### `updater_win32`
+### `updater_win32.py`
 
 * check privacy permission
 * invoke `update_runner.retrieve_files` if an argument is passed.
@@ -73,7 +73,7 @@ It is also useful to read the [specification of how updates work on MacOS](https
 * launch `poller.loop()`
 
 
-### `updater_runner`
+### `updater_runner.py`
 
 * `updater_utils.tarball_save()`:
   * Save the tarball in the specified path.
@@ -84,7 +84,7 @@ It is also useful to read the [specification of how updates work on MacOS](https
 * `updater_utils.signature_get_uri()`:
   *  create the download uri for the signature joining the system type and the version
 
-### `updater_verify`
+### `updater_verify.py`
 
 * `updater_verify.dgst_verify()`
   * Call OpenSSL to verify the signature.  The public key is `VERSIONDIR/pubkey.pem`.  It assumes the signature algorithm is SHA256.
@@ -95,8 +95,7 @@ It is also useful to read the [specification of how updates work on MacOS](https
 Each relese is made by a triple of file, the structure of the file name is a number dot a 9 digit number dot the extension.
 
 * The first number is the version number
-* The 9 digit number is made by three groups of three digits  indicating:
-  * 
+* The 9 digit number is made by three groups of three digits.
 
 
 
